@@ -9,3 +9,172 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+:root {
+    --bg: white;
+    --menu-link-active-color-bg: #f9f9f9;
+    --menu-link-color-active: #555555;
+    --theme-icon: url('images/black_theme.png');
+    --color: #333;
+}
+
+[data-theme="dark"] {
+    --bg: black;
+    --menu-link-active-color-bg: #393939;
+    --menu-link-color-active: beige;
+    --theme-icon: url('images/light_theme.png');
+    --color: beige;
+}
+
+/* Pamatstils */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Galvenes stils */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    background-color: var(--bg);
+
+    /* Logo stils */
+    .logo {
+    font-size: 22px;
+    font-family: sans-serif;
+    color: var(--color);
+    margin-left: 20px;
+    }
+
+    /* Burgera izvēlnes stils */
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+
+        span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background-color: var(--color);
+            transition: all 0.3s ease;
+        }
+
+        /* Burgera parveršana par krustiņu */
+        &.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        &.open span:nth-child(2) {
+            opacity: 0;
+        }
+        &.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    }
+
+    /* Izvēlnes stils */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        display: none; 
+
+        &.open {
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            display: block;
+            padding: 12px 20px;
+            color: #0076ce;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-size: 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        a.active-link {
+            color: var(--menu-link-color-active);
+            background-color: var(--menu-link-active-color-bg);
+        }
+    } 
+    
+    .langAndTheme {
+
+        display: flex;
+
+        /* Valodas izvēlnes stils */
+        .toggleLanguage {
+            border: 1px solid black;
+            background-color: var(--bg);
+            color: var(--color);
+            &.active {
+                background-color: gray;
+            }
+            &:nth-of-type(2) {
+                margin-right: 20px;
+            }
+        }
+ 
+        /* Tēmas pārslēgšanas pogas stils */
+        #themeToggle {
+            border: none;
+            background-image: var(--theme-icon);
+            background-size: 25px 25px;
+            height: 25px;
+            width: 25px;
+        }
+    }
+}
+
+/* Galvenā satura stils */
+main {
+    background-color: var(--bg);
+    color: var(--color);
+    flex: 1;
+    padding: 20px;
+    
+    h1 {
+        text-align: center;
+    }
+    
+    p {
+        text-align: justify;
+        margin-bottom: 50px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Kājene stils */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    border-top: 1px solid #ccc ;
+    font-weight: bold;
+    background-color: var(--bg);
+    color: var(--color)
+}
+
+
+
+
