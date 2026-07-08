@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+class SetLocale
+{
+    /**
+     * Parbauda lietotāja lokali un piešķir to esošam HTTP vaicājumam.
+     * Ja sessijā lokales vēl nav, tiek piešķirta defolta vertība.
+     */
+    public function handle(Request $request, Closure $next): Response
+    {
+        $allowedLocales = ['lv', 'en'];
+        $locale = session('locale', config('app.locale'));
+
+        // Aizsardība no neeksistējošam lokalēm, piemēram, ievadītām adresu joslā
+        if (!in_array($locale, $allowedLocales, true)) {
+            $locale = config('app.locale');
+        }
+
+        App::setLocale($locale);  
+
+        return $next($request);
+    }
+}
