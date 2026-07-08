@@ -14,7 +14,7 @@
     --bg: white;
     --menu-link-active-color-bg: #f9f9f9;
     --menu-link-color-active: #555555;
-    --theme-icon: url('images/black_theme.png');
+    --theme-icon: url('/images/black_theme.png');
     --color: #333;
 }
 
@@ -22,7 +22,7 @@
     --bg: black;
     --menu-link-active-color-bg: #393939;
     --menu-link-color-active: beige;
-    --theme-icon: url('images/light_theme.png');
+    --theme-icon: url('/images/light_theme.png');
     --color: beige;
 }
 
