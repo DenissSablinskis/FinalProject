@@ -1,6 +1,6 @@
 import './bootstrap';
-// ----------------BURGERA IZVĒLNE----------------------
 
+// ----------------BURGERA IZVĒLNE----------------------
 
 const burgerBtn = document.getElementById('burgerBtn');
 const navLinks = document.getElementById('navLinks');
@@ -12,12 +12,11 @@ burgerBtn.addEventListener('click', () => {
     navLinks.classList.toggle('open');
 });
 
-const themeToggleBtn = document.getElementById('themeToggle');
-const currentTheme = localStorage.getItem('theme');
-
 
 // -------------------TĒMAS IZVĒLE--------------------
 
+const themeToggleBtn = document.getElementById('themeToggle');
+const currentTheme = localStorage.getItem('theme');
 
 // Iestatīt sākotnējo tēmu, ja tā ir saglabāta
 
