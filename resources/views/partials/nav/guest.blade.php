@@ -1,4 +1,4 @@
-<a href="#" class="active-link" data-translate="navHome">Galvenā lapa</a>
-<a href="#" data-translate="navProducts">Produkti</a>
-<a href="#" data-translate="navLogin">Ieiet</a>
-<a href="#" data-translate="navRegister">Reģistrēties</a>
+<a href="#" class="active-link">{{ __('messages.navHome') }}</a>
+<a href="#">{{ __('messages.navProducts') }}</a>
+<a href="#">{{ __('messages.navLogin') }}</a>
+<a href="#">{{ __('messages.navRegister') }}</a>
