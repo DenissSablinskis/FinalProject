@@ -21,18 +21,21 @@
             <div class="langAndTheme">
 
                 <!-- Valodas izvēlne -->
-                <form method='post' action="{{ route('locale.switch', ['locale' => 'lv']) }}">
-                    @csrf
-                    <button type="submit" class="toggleLanguage {{ app()->getLocale() === 'lv' ? 'active' : '' }}">
-                        LV
-                    </button>
-                </form>
-                <form method='post' action="{{ route('locale.switch', ['locale' => 'en']) }}">
-                    @csrf
-                    <button type="submit" class="toggleLanguage {{ app()->getLocale() === 'en' ? 'active' : '' }}">
-                        EN
-                    </button>
-                </form>
+                <div class="language-switcher">
+                    <form method='post' action="{{ route('locale.switch', ['locale' => 'lv']) }}">
+                        @csrf
+                        <button type="submit" class="toggleLanguage {{ app()->getLocale() === 'lv' ? 'active' : '' }}">
+                            LV
+                        </button>
+                    </form>
+                    <span class="lang-divider">|</span>
+                    <form method='post' action="{{ route('locale.switch', ['locale' => 'en']) }}">
+                        @csrf
+                        <button type="submit" class="toggleLanguage {{ app()->getLocale() === 'en' ? 'active' : '' }}">
+                            EN
+                        </button>
+                    </form>
+                </div>
                 
                 <!-- Tēmas pārslēgšanas poga -->
                 <button id="themeToggle"></button>

@@ -118,18 +118,35 @@ header {
         display: flex;
 
         /* Valodas izvēlnes stils */
-        .toggleLanguage {
-            border: 1px solid black;
-            background-color: var(--bg);
-            color: var(--color);
-            &.active {
-                background-color: gray;
+        .language-switcher{
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin-right: 7px;
+            form{
+                /* Lai forma aizņēmtu tikai pogas platumu */
+                display: inline-flex;
+                margin: 0;
+                padding: 0;
             }
-            &:nth-of-type(2) {
-                margin-right: 20px;
+            .lang-divider{
+                color: #000000;
+                font-size: 16px;
+                line-height: 1;
+            }
+            .toggleLanguage {
+                background-color: var(--bg);
+                color: var(--color);
+                border: none;
+                cursor: pointer;
+                padding: 2px 4px;
+                font-weight: 500;
+                &.active {
+                    background-color: gray;
+                }
             }
         }
- 
+      
         /* Tēmas pārslēgšanas pogas stils */
         #themeToggle {
             border: none;
