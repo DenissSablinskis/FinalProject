@@ -32,6 +32,8 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    width: 100%;
+    background-color: var(--bg);
 }
 
 /* Galvenes stils */
@@ -50,6 +52,9 @@ header {
     font-family: sans-serif;
     color: var(--color);
     margin-left: 20px;
+    @media only screen and (min-width: 580px){
+        display:none;
+    }
     }
 
     /* Burgera izvēlnes stils */
@@ -80,6 +85,12 @@ header {
         &.open span:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
         }
+
+        @media only screen and (min-width: 580px){
+            display:none;
+        }
+
+
     }
 
     /* Izvēlnes stils */
@@ -91,6 +102,12 @@ header {
         background-color: var(--bg);
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         display: none; 
+
+        @media only screen and (min-width: 580px){
+            display: flex;
+            position: relative;
+            box-shadow: none;
+        }
 
         &.open {
             display: flex;
@@ -105,6 +122,9 @@ header {
             font-family: sans-serif;
             font-size: 16px;
             border-bottom: 1px solid #e0e0e0;
+            @media only screen and (min-width: 580px){
+                border: 0;
+            }
         }
 
         a.active-link {
@@ -160,27 +180,47 @@ header {
 
 /* Galvenā satura stils */
 main {
-    background-color: var(--bg);
     color: var(--color);
     flex: 1;
     padding: 20px;
+
+    @media only screen and (min-width: 580px){
+        max-width: 900px;
+        margin: 0 auto;
+    }
     
     h1 {
         text-align: center;
         font-size: 2rem;
         font-weight: bold;
         margin-bottom: 1rem;
+        @media only screen and (min-width: 580px){
+            font-size: 3rem;
+        }
     }
     
     p {
         text-align: justify;
         margin-bottom: 50px;
+        @media only screen and (min-width: 580px){
+            font-size: 1.5rem;
+        }
     }
 
+   .about-image-wrapper {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto 0; 
+    
     img {
         width: 100%;
         height: auto;
+        display: block;
+        border-radius: 8px; 
+        object-fit: cover;
     }
+}
 }
 
 /* Kājene stils */
