@@ -10,7 +10,7 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('pages.home');
-});
+})->name('home');
 
 Route::post('/locale/switch/{locale}', function (Request $request, string $locale) {
     $allowedLocales = ['lv', 'en'];
@@ -23,9 +23,9 @@ Route::post('/locale/switch/{locale}', function (Request $request, string $local
 })->name('locale.switch');
 
 Route::middleware('guest')->group(function () {
-    Route::get('/login', [AuthController::class, 'showLoginForm']);
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AuthController::class, 'login']);
-    Route::get('/register', [AuthController::class, 'showRegisterForm']);
+    Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
     Route::post('/register', [AuthController::class, 'register']);
 });
 
