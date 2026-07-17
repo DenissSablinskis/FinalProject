@@ -2,4 +2,7 @@
 <a href="#">{{ __('messages.navProfile') }}</a>
 <a href="#">{{ __('messages.navProducts') }}</a>
 <a href="#">{{ __('messages.navCart') }}</a>
-<a href="#">{{ __('messages.navLogout') }}</a>
+<form method='post' action="{{ route('logout') }}">
+    @csrf
+    <button type="submit">{{ __('messages.navLogout') }}</button>
+</form
