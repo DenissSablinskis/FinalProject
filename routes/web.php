@@ -2,6 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\AuthController;
+
+Route::get('/', function () {
+    return view('pages.home');
+});
+
+Route::get('/home', function () {
+    return view('pages.home');
+});
 
 Route::post('/locale/switch/{locale}', function (Request $request, string $locale) {
     $allowedLocales = ['lv', 'en'];
@@ -13,6 +22,13 @@ Route::post('/locale/switch/{locale}', function (Request $request, string $local
     return redirect()->back();
 })->name('locale.switch');
 
-Route::get('/home', function () {
-    return view('pages.home');
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLoginForm']);
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::get('/register', [AuthController::class, 'showRegisterForm']);
+    Route::post('/register', [AuthController::class, 'register']);
 });
+
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
+
+
