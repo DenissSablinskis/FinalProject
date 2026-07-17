@@ -9,5 +9,13 @@ return [
   'navRegister'=> 'Register',
   'heading'=> 'About the Company',
   'text'=> 'GAISMA food delivery ordering system is a modern solution for convenient and fast purchasing of food products. The system allows customers to browse a wide catalog of food items with precise descriptions and prices, easily create and manage a shopping cart, choose delivery time and address, and receive order confirmation and delivery status updates.',
+  'loginEmail'=>'Enter email',
+  'loginPassword'=>'Enter password',
+  'loginButton'=>'Login',
+  'registerEmail'=>'E-mail',
+  'registerUsername'=>'Username',
+  'registerPassword'=>'Password',
+  'registerConfirmPassword'=>'Confirm password',
+  'registerButton'=>'Register',
 ];
 ?>

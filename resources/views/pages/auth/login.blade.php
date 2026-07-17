@@ -13,21 +13,21 @@
             </div>
         @endif
 
-        <label for="email">Ievadiet e-pasta adresi</label>
+        <label for="email">{{ __('messages.loginEmail') }}</label>
         <input type="text" id="email" name="email" value="{{ old('email') }}" required>
 
         @error('email')
             <div>{{ $message }}</div>
         @enderror
 
-        <label for="password">Ievadiet paroli</label>
+        <label for="password">{{ __('messages.loginPassword') }}</label>
         <input type="password" id="password" name="password" required>
 
         @error('password')
             <div>{{ $message }}</div>
         @enderror
-        
-        <input type="submit" value="Ieiet">
+
+        <button type="submit">{{ __('messages.loginButton') }}</button>
     </form>
 
 @endsection
