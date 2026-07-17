@@ -221,6 +221,69 @@ main {
         object-fit: cover;
     }
 }
+
+    /* Autorizēšanas un reģistrācijas lapu stili */
+    .form-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #1A1A1A;
+        margin-bottom: 24px;
+        text-align: center; 
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 32px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        max-width: 360px;
+        margin: 0 auto;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        label{
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #4A4A4A;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+        input {
+            width: 100%;
+            height: 48px;
+            background: #F5F7FA;
+            border: 1px solid #E4E7EC;
+            border-radius: 8px;
+            padding: 0 16px;
+            font-size: 16px;
+            color: #1A1A1A;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            transition: all 0.2s ease;
+            &:focus{
+                outline: none;
+                border-color: #1A73E8;
+                background: #ffffff;
+                box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.1);
+            }
+        }
+        button {
+            width: 100%;
+            height: 48px;
+            background: #1A73E8;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            margin-top: 8px;
+            &:hover {
+                background: #1557B0;
+            }
+        }
+    }
 }
 
 /* Kājene stils */

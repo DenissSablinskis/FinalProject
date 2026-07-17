@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <h1 class="form-title">Reģistrācija</h1>
     <form method='post' action="{{ route('register.store') }}">
         @csrf
         @if ($errors->any())
@@ -41,7 +42,7 @@
             <div>{{ $message }}</div>
         @enderror
         
-        <input type="submit" value="{{ __('messages.registerButton') }}">
+        <button type="submit">{{ __('messages.registerButton') }}</button>
     </form>
 
 @endsection

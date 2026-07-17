@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <h1 class="form-title">Autorizācija</h1>
     <form method='post' action="{{ route('login.store') }}">
         @csrf
         @if ($errors->any())
