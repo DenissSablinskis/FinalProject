@@ -42,6 +42,9 @@
                 
                 <button class="submit-btn" type="submit">{{ __('messages.registerButton') }}</button>
             </form>
+            <div class='redirect'>
+                <p>{{ __('messages.registered') }} <a href="{{ route('login') }}">{{ __('messages.toLogin') }}</a></p> 
+            </div>
         </div>
     </div>
 @endsection

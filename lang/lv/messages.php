@@ -20,5 +20,9 @@ return [
     'authError'=>'Nepareiza e-pasta adrese vai parole', 
     'registerTitle'=>'Reģistrācija',
     'loginTitle'=>'Autorizācija',
+    'notRegistered'=>'Nav konta?',
+    'toRegistration'=>'Reģistrēties',
+    'registered'=>'Jau esat reģistrējies?',
+    'toLogin'=>'Ieiet',
 ];
 ?>

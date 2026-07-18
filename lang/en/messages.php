@@ -20,5 +20,9 @@ return [
   'authError'=>'Invalid email or password',
   'registerTitle'=>'Registration',
   'loginTitle'=>'Login',
+  'notRegistered'=>'Don\'t have an account?',
+  'toRegistration'=>'Sign up',
+  'registered'=>'Already registered?',
+  'toLogin'=>'Log in',
 ];
 ?>
