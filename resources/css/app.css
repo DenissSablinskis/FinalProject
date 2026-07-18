@@ -16,6 +16,17 @@
     --menu-link-color-active: #555555;
     --theme-icon: url('../images/black_theme.png');
     --color: #333;
+    --login-bg: url('../images/auth/fruits-light.png');
+    --auth-container-bg: #ffffff;
+    --auth-container-border: 1px solid #e8edf4;
+    --auth-container-box-shadow: 0 20px 50px rgba(17, 24, 39, 0.08);
+    --auth-form-label-color: #334155;
+    --auth-form-input-bg: #f8fafc;
+    --auth-form-input-border: 1px solid #d8e0ea;
+    --auth-form-input-color: #0f172a;
+    --auth-form-input-focus-border-color: #2563eb;
+    --auth-form-input-focus-box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+    --auth-form-title-color: #111827;
 }
 
 [data-theme="dark"] {
@@ -24,6 +35,17 @@
     --menu-link-color-active: beige;
     --theme-icon: url('../images/light_theme.png');
     --color: beige;
+    --login-bg: url('../images/auth/fruits-dark.png');
+    --auth-container-bg: #121212;
+    --auth-container-border: 1px solid #2a2a2a;
+    --auth-container-box-shadow: 0 18px 42px rgba(0, 0, 0, 0.45);
+    --auth-form-label-color: #94a3b8;
+    --auth-form-input-bg: #1b1f24;
+    --auth-form-input-border: 1px solid #30363d;
+    --auth-form-input-color: #e5e7eb;
+    --auth-form-input-focus-border-color: #60a5fa;
+    --auth-form-input-focus-box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.2);
+    --auth-form-title-color: #f3f4f6;
 }
 
 /* Pamatstils */
@@ -207,83 +229,142 @@ main {
         }
     }
 
-   .about-image-wrapper {
-    display: block;
-    width: 100%;
-    max-width: 800px;
-    margin: 30px auto 0; 
-    
-    img {
-        width: 100%;
-        height: auto;
+    .about-image-wrapper {
         display: block;
-        border-radius: 8px; 
-        object-fit: cover;
+        width: 100%;
+        max-width: 800px;
+        margin: 30px auto 0; 
+        
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px; 
+            object-fit: cover;
+        }
     }
-}
 
     /* Autorizēšanas un reģistrācijas lapu stili */
-    .form-title {
-        font-size: 22px;
-        font-weight: 700;
-        color: #1A1A1A;
-        margin-bottom: 24px;
-        text-align: center; 
-    }
-    form {
+    .auth-container {
+        width: 100%;
+        max-width: 430px;
+        margin: 28px auto;
         display: flex;
-        flex-direction: column;
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 32px;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-        max-width: 360px;
-        margin: 0 auto;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        label{
+        border-radius: 18px;
+        overflow: hidden;
+        background-color: var(--auth-container-bg);
+        border: var(--auth-container-border);
+        box-shadow: var(--auth-container-box-shadow);
+
+        @media only screen and (min-width: 580px) {
+            max-width: 860px;
+            min-height: 560px;
+            margin: 42px auto;
+        }
+    }
+
+    .auth-sidebar {
+        display: none;
+
+        @media only screen and (min-width: 580px) {
             display: block;
-            font-size: 14px;
-            font-weight: 500;
-            color: #4A4A4A;
-            margin-bottom: 8px;
-            text-align: left;
+            flex: 1.05;
+            min-width: 300px;
+            min-height: 560px;
+            background-image: var(--login-bg);
+            background-size: cover;
+            background-position: center center;
+            position: relative;
         }
+
+    }
+
+    .auth-form-wrapper {
+        width: 100%;
+        padding: 30px 24px;
+
+        @media only screen and (min-width: 580px) {
+            width: auto;
+            flex: 1;
+            padding: 56px 46px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        label {
+            margin-bottom: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: var(--auth-form-label-color);
+        }
+
         input {
-            width: 100%;
-            height: 48px;
-            background: #F5F7FA;
-            border: 1px solid #E4E7EC;
-            border-radius: 8px;
-            padding: 0 16px;
+            height: 50px;
+            border: var(--auth-form-input-border);
+            border-radius: 12px;
+            background: var(--auth-form-input-bg);
+            padding: 0 14px;
             font-size: 16px;
-            color: #1A1A1A;
-            box-sizing: border-box;
-            margin-bottom: 20px;
-            transition: all 0.2s ease;
-            &:focus{
+            color: var(--auth-form-input-color);
+            width: 100%;
+
+            &:focus {
                 outline: none;
-                border-color: #1A73E8;
+                border-color: var(--auth-form-input-focus-border-color);
                 background: #ffffff;
-                box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.1);
-            }
-        }
-        button {
-            width: 100%;
-            height: 48px;
-            background: #1A73E8;
-            color: #ffffff;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s ease;
-            margin-top: 8px;
-            &:hover {
-                background: #1557B0;
+                box-shadow: var(--auth-form-input-focus-box-shadow);
             }
         }
     }
+
+    .form-title {
+        margin: 0 0 30px;
+        font-size: 30px;
+        line-height: 1.15;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: var(--auth-form-title-color);
+
+        @media only screen and (min-width: 580px) {
+            font-size: 34px;
+        }
+    }
+
+    .input-group {
+        margin-bottom: 16px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        height: 50px;
+        margin-top: 8px;
+        border: 0;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        color: #ffffff;
+        cursor: pointer;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        box-shadow: 0 10px 24px rgba(37, 99, 235, 0.28);
+        transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+
+        &:hover {
+            transform: translateY(-1px);
+            filter: brightness(1.02);
+            box-shadow: 0 12px 28px rgba(37, 99, 235, 0.34);
+        }
+    }
+
+    .field-error {
+        margin-top: 6px;
+        font-size: 13px;
+        color: #dc2626;
+    }
+
 }
 
 /* Kājene stils */
@@ -297,7 +378,4 @@ footer {
     background-color: var(--bg);
     color: var(--color)
 }
-
-
-
 

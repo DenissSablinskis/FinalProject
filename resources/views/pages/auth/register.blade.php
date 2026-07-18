@@ -1,48 +1,47 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="form-title">Reģistrācija</h1>
-    <form method='post' action="{{ route('register.store') }}">
-        @csrf
-        @if ($errors->any())
-            <div>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+    <div class='auth-container'>
+        <div class="auth-sidebar"></div>
+        <div class="auth-form-wrapper">
+            <h1 class="form-title">Reģistrācija</h1>
+            <form method='post' action="{{ route('register.store') }}">
+                @csrf
 
-        <label for="email">{{ __('messages.registerEmail') }}</label>
-        <input type="text" id="email" name="email" value="{{ old('email') }}" required>
+                <div class="input-group">
+                    <label for="email">{{ __('messages.registerEmail') }}</label>
+                    <input type="text" id="email" name="email" value="{{ old('email') }}" required>
+                    @error('email')
+                        <div class="field-error">{{ $message }}</div>
+                    @enderror
+                </div>
 
-        @error('email')
-            <div>{{ $message }}</div>
-        @enderror
+                <div class="input-group">
+                    <label for="username">{{ __('messages.registerUsername') }}</label>
+                    <input type="text" id="username" name="username" value="{{ old('username') }}" required>
+                    @error('username')
+                        <div class="field-error">{{ $message }}</div>
+                    @enderror
+                </div>
 
-        <label for="username">{{ __('messages.registerUsername') }}</label>
-        <input type="text" id="username" name="username" value="{{ old('username') }}" required>
+                <div class="input-group">
+                    <label for="password">{{ __('messages.registerPassword') }}</label>
+                    <input type="password" id="password" name="password" required>
+                    @error('password')
+                        <div class="field-error">{{ $message }}</div>
+                    @enderror
+                </div>
 
-        @error('username')
-            <div>{{ $message }}</div>
-        @enderror
-
-        <label for="password">{{ __('messages.registerPassword') }}</label>
-        <input type="password" id="password" name="password" required>
-
-        @error('password')
-            <div>{{ $message }}</div>
-        @enderror
-
-        <label for="password_confirmation">{{ __('messages.registerConfirmPassword') }}</label>
-        <input type="password" id="password_confirmation" name="password_confirmation" required>
-
-        @error('password_confirmation')
-            <div>{{ $message }}</div>
-        @enderror
-        
-        <button type="submit">{{ __('messages.registerButton') }}</button>
-    </form>
-
+                <div class="input-group">
+                    <label for="password_confirmation">{{ __('messages.registerConfirmPassword') }}</label>
+                    <input type="password" id="password_confirmation" name="password_confirmation" required>
+                    @error('password_confirmation')
+                        <div class="field-error">{{ $message }}</div>
+                    @enderror
+                </div>
+                
+                <button class="submit-btn" type="submit">{{ __('messages.registerButton') }}</button>
+            </form>
+        </div>
+    </div>
 @endsection
