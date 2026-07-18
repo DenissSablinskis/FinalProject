@@ -17,5 +17,8 @@ return [
     'registerPassword'=>'Parole',
     'registerConfirmPassword'=>'Atkārtojiet paroli',
     'registerButton'=>'Reģistrēties',
+    'authError'=>'Nepareiza e-pasta adrese vai parole', 
+    'registerTitle'=>'Reģistrācija',
+    'loginTitle'=>'Autorizācija',
 ];
 ?>

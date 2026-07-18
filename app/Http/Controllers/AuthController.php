@@ -24,7 +24,7 @@ class AuthController extends Controller
     {
         $credentials = $request->validate([
             'email' => ['required', 'email'],
-            'password' => ['required', 'string'],
+            'password' => ['required'],
         ]);
 
         $remember = $request->boolean('remember');
@@ -37,7 +37,7 @@ class AuthController extends Controller
 
         return back()
             ->withErrors([
-                'email' => 'Nepareiza e-pasta adrese vai parole.',
+                'email' => __('messages.authError'),
             ])
             ->onlyInput('email');
     }

@@ -17,5 +17,8 @@ return [
   'registerPassword'=>'Password',
   'registerConfirmPassword'=>'Confirm password',
   'registerButton'=>'Register',
+  'authError'=>'Invalid email or password',
+  'registerTitle'=>'Registration',
+  'loginTitle'=>'Login',
 ];
 ?>

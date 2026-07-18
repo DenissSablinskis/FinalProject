@@ -4,7 +4,7 @@
     <div class="auth-container">
         <div class="auth-sidebar"></div>
         <div class="auth-form-wrapper">
-            <h1 class="form-title">Autorizācija</h1>
+            <h1 class="form-title">{{ __('messages.loginTitle') }}</h1>
             <form method='post' action="{{ route('login.store') }}">
                 @csrf
                 <div class='input-group'>

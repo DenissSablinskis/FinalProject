@@ -4,7 +4,7 @@
     <div class='auth-container'>
         <div class="auth-sidebar"></div>
         <div class="auth-form-wrapper">
-            <h1 class="form-title">Reģistrācija</h1>
+            <h1 class="form-title">{{ __('messages.registerTitle') }}</h1>
             <form method='post' action="{{ route('register.store') }}">
                 @csrf
 
