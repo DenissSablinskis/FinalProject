@@ -10,13 +10,11 @@
             <div class="logo">GAISMA</div>
 
             <!-- Navigācijas saites -->
-            <nav class="nav-links" id="navLinks">
                 @auth
                     @include('partials.nav.auth')
                 @else
                     @include('partials.nav.guest')
                 @endauth
-            </nav>
             
             <div class="langAndTheme">
 
