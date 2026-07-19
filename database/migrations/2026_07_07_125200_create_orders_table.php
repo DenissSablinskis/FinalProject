@@ -16,20 +16,17 @@ return new class extends Migration
 
             $table->foreignId('user_id')
                 ->constrained('users')
-                ->onUpdate('restrict')
-                ->onDelete('restrict');
+                ->restrictOnDelete();
 
             $table->foreignId('operator_id')
                 ->nullable()
                 ->constrained('users')
-                ->onUpdate('restrict')
-                ->onDelete('restrict');
+                ->restrictOnDelete();
 
             $table->foreignId('delivery_person_id')
                 ->nullable()
                 ->constrained('users')
-                ->onUpdate('restrict')
-                ->onDelete('restrict');
+                ->restrictOnDelete();
 
             $table->string('status')->nullable();
 

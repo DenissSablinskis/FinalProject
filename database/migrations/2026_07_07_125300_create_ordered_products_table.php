@@ -15,15 +15,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('order_id')
                 ->constrained('orders')
-                ->onUpdate('restrict')
-                ->onDelete('restrict');
+                ->cascadeOnDelete();
             $table->foreignId('product_id')
                 ->constrained('products')
-                ->onUpdate('restrict')
-                ->onDelete('restrict');
-            $table->integer('product_count');
+                ->restrictOnDelete();
+            $table->unsignedInteger('product_count');
             $table->decimal('unit_price_at_purchase', 10, 2);
-            $table->timestamps();
         });
     }
 
