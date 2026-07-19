@@ -1,6 +1,8 @@
 <nav class="nav-links" id="navLinks">
     <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active-link' : '' }}">{{ __('messages.navHome') }}</a>
     <a href="#">{{ __('messages.navProducts') }}</a>
-    <a href="{{ route('login') }} " class="{{ request()->routeIs('login') ? 'active-link' : '' }}">{{ __('messages.navLogin') }}</a>
-    <a href="{{ route('register') }}" class="{{ request()->routeIs('register') ? 'active-link' : '' }}">{{ __('messages.navRegister') }}</a>
+    @unless (request()->routeIs('login', 'register'))
+        <a href="{{ route('login') }} ">{{ __('messages.navLogin') }}</a>
+        <a href="{{ route('register') }}">{{ __('messages.navRegister') }}</a>
+    @endunless
 </nav>
